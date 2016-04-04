@@ -1,0 +1,156 @@
+*{
+	margin:0;
+	padding:0;
+} 
+#header{
+	width:100%;
+	height: 62px;
+	overflow: hidden;
+	border-bottom: 1px solid #d6dfea;
+	background: #eff4fa;
+}
+.maillogo{
+	background-image:url('https://rescdn.qqmail.com/zh_CN/htmledition/images/logo/qqmail/qqmail_logo_default_70h206ff1.png');
+	text-indent: -9999em;
+	background-size: 182px 35px;
+	margin-left: 40px;
+	margin-top:14px;
+	float: left;
+	width: 182px;
+	height: 35px;
+}
+
+.rlist {
+    margin-top: 16px;
+    padding-right: 40px;
+    line-height: 30px;
+    font-size:12px;
+    text-align: right;
+    color: #b6b6b6;
+    overflow:hidden;
+}
+
+.rlist a{
+	font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+	font-size:12px;
+	text-decoration:none;
+	color: #1d5494;
+}
+/* content */
+.content{
+	width: 960px;
+    margin: 32px auto;
+    padding: 0 24px;
+}
+#lpicture{
+	position:relative;
+	margin-right: 395px;
+
+}
+.lbpicture{
+	position: absolute;
+    left: 0px;
+    right: 0px;
+    height: 400px;
+    background-repeat: no-repeat;
+}
+
+/* login */
+.login{
+	width: 334px;
+    height: 387px;
+    float:right;
+    border: 1px solid #a0b1c4;
+    z-index:5;
+    position:relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#login_header{
+	height:50px;
+	border-bottom: 1px solid #c0cdd9;
+	background-color: #f9fbfe;
+}
+.tlogin{
+	left: 53px;
+    height: 46px;
+    position:absolute;
+    font-size:16px;
+	font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+}
+.qlogin{
+	color: #999;
+	/* display: inline-block; */
+	height: 45px;
+	line-height: 45px;
+	text-decoration:none;
+	margin-right: 60px;		
+}
+
+.plogin{
+	color: #333;
+	/* display: inline-block; */
+	height: 45px;
+	line-height: 45px;
+	text-decoration:none;
+}
+
+#number{
+    border: 1px solid #96a5b4;
+    height: 40px;
+    width: 284px;
+    border-radius: 2px;
+    margin: 32px 25px 0px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #aaa;
+}
+#password{
+	border: 1px solid #96a5b4;
+    height: 40px;
+    width: 284px;
+    border-radius: 2px;
+    margin: 10px 25px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #aaa;
+}
+.checkbox{
+	float:left;
+	position:absolute;
+	margin-left: 24px;
+	margin-top: 20px;
+}
+.box{
+	height: 16px;
+	width: 16px;
+	border: 1px solid #96a5b4;
+}
+.btn{
+	display:block;
+	height: 40px;
+	line-height: 39px;
+	width: 100%;
+	outline: none;
+	font-weight: normal;
+}
+/* footer */
+#footer{
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
