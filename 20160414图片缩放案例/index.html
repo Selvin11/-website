@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>showpicture</title>
+</head>
+<body>
+	<div class="picture" style="width:400px;margin:0px auto;">
+		<img src="min.png" id="myImage" ></br>
+		<input type="button" id="max" value="放大"></input>
+		<input type="button" id="min" value="缩小"></input>
+	</div>
+    <script type="text/javascript">
+    	window.onload = function () {
+    		var maxBtn = document.getElementById('max');
+    		maxBtn.onclick = function () {
+    			maxFun();//放大函数
+    		}
+    		var img =document.getElementById('myImage');
+    		var maxWidth = img.width*2;
+    		var maxHeight = img.height*2;
+    		//实现放大函数
+    		function maxFun() {
+    			var endWidth = img.width*1.3;
+    			var endHeight = img.height*1.3;
+    			var maxTimer = setInterval(function () {
+    				if (img.width < endWidth && img.height < endHeight) {
+    					if (img.width < maxWidth && img.height < maxHeight) {
+    				img.width = img.width*1.05;
+    				img.height = img.height*1.05;
+    			}else{
+    				clearInterval(maxTimer);
+    			}
+    			}else{
+    				clearInterval(maxTimer);
+    			}
+    			},20);
+    		}
+    		var minBtn = document.getElementById('min');
+    		minBtn.onclick = function () {
+    			minFun();//缩小函数
+    		}
+    		var img =document.getElementById('myImage');
+    		var minWidth = img.width*0.5;//缩小极限值
+    		var minHeight = img.height*0.5;
+    		//实现缩小函数
+    		function minFun() {
+    			var endWidth = img.width*0.7;
+    			var endHeight = img.height*0.7;
+    			var minTimer = setInterval(function () {
+    				if (img.width > endWidth && img.height > endHeight) {
+    					if (img.width >minWidth && img.height > minHeight) {
+    				img.width = img.width*0.95;
+    				img.height = img.height*0.95;
+    			}else{
+    				clearInterval(minTimer);
+    				alert('can\' be small!!');
+    			}
+    			}else{
+    				clearInterval(minTimer);
+    			}
+    			},20);
+    		}
+    	}
+    </script>
+</body>
+</html>

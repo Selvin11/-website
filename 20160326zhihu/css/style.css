@@ -1,0 +1,113 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+#navbar {
+    background-color: #086ed5;
+    width: 100%;
+}
+#inner {
+    height: 46px;
+    margin: 0 auto;
+    width: 960px;
+}
+#logo {
+    color: white;
+    float: left;
+    font-size: 32px;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 10px;
+}
+#search-form {
+    position: relative;
+}
+#s {
+    border: 1px solid #045bb2;
+    border-radius: 4px;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    padding: 7px 50px 7px 10px;
+    position: relative;
+    top: 7px;
+    width: 300px;
+}
+.search-button {
+    padding: 16px 0;
+    position: relative;
+    right: 40px;
+    top: 8px;
+    width: 40px;
+   border: 1px solid #045bb2;
+    border-radius: 4px;
+    background: #0e78e7;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05),inset 0 1px 1px rgba(255,255,255,.15);
+    color: #fff;
+}
+#top-nav {
+    float: left;
+    position: relative;
+    top: -30px;
+    left: -40px;
+}
+#top-nav ul {
+    list-style: outside none none;
+}
+#top-nav li {
+    display: inline;
+}
+#top-nav a {
+    color: white;
+    float: left;
+    padding-left: 20px;
+    text-decoration: none;
+}
+.top-profile {
+	
+	
+}
+.top-profile button{
+	width:66px;
+	top:10px;
+	position:absolute;
+    height: 32px;
+    line-height: 30px;
+    border: 1px solid #045bb2;
+    border-radius: 4px;
+    background: #0e78e7;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05),inset 0 1px 1px rgba(255,255,255,.15);
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.12);
+    cursor: pointer;
+}
+
+.top-profile span{
+	height: 30px;
+    position: absolute;
+    right: 200px;
+    top: 20px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

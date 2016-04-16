@@ -1,0 +1,130 @@
+/* comment */
+*{
+	margin:0px;
+	padding:0px;
+}
+.fl{float:left;}
+.fr{float:right;}
+
+/* header */
+.header{
+	height:120px;
+	width:100%;
+	background-color:#eeeeee;
+}
+.top{
+	width:940px;
+	margin:0 auto;
+}
+.logo img{
+	height:120px;
+}
+
+
+.nav li{
+	list-style:none;
+	float:left;
+    line-height:120px;
+    margin-left:100px;
+}
+
+.nav a{
+	text-decoration:none;
+    color:#818181;
+}
+/* content */
+.content{
+	width:853px;
+	height:880px;
+	margin:0 auto;
+	position:relative;
+}
+
+.content .idea{
+	float:left;
+	width:420px;
+	margin-top:115px;
+	line-height:20px;
+
+}
+
+.content .right_pic{
+	float:right;
+	width:366px;
+	top: 77px;
+	right: 10px;
+	position: absolute;
+}
+
+.content .btn{
+	float:left;
+	clear:bottom;
+	width:230px;
+	position:absolute;
+    margin-top:300px;
+    left:145px;
+}
+
+.content .btn .try{
+	width:230px;
+	height:60px;
+	background-color:#f99400;
+	border: 0;
+    font-size: 24px;
+    text-align: center;
+    color:white;
+}
+
+.content .btn p{
+	font-size:12px;
+}
+ 
+.wording{
+	position:absolute;
+	bottom:0;
+	float:left;
+	width:370px;
+	line-height:20px;
+}
+
+.wording2{
+	position:absolute;
+	bottom:0;
+	right:0;
+	width:370px;
+	line-height:20px;
+
+}
+/* footer */
+.footer{
+	height:150px;
+	width:100%;
+	background-color:#eeeeee;
+	position:relative;
+}
+
+.copy{
+	margin-left:245px;
+	margin-top:40px;
+	display:block;
+	padding-top:40px;
+}
+
+.share{
+	right:263px;
+	top:40px;
+	position:absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

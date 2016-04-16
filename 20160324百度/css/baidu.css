@@ -1,0 +1,157 @@
+/* comment */
+*{
+	margin:0;
+	padding:0;
+}
+
+
+/* header */
+.header{
+	width:100%;
+	height:48px;
+	position:relative;
+}
+
+ .navbar, .btn_nav{
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+.navbar{
+	margin: 19px 0 5px 0;
+	padding: 0 96px 0 0;
+}
+.navbar a{
+	margin-left: 20px;
+    font-size: 13px;
+    text-decoration: underline;
+    color: #333;
+    font-weight: bold;
+}
+.btn_nav {
+	margin-top:19px;
+	right:10px;
+	border-bottom: 1px solid #38f;
+	width: 60px;
+	height: 23px;
+	background: #38f;
+	text-align:center;
+}
+.btn_nav a{
+	font-size:13px;
+	color: white;
+	line-height:23px;
+	text-decoration:none;
+
+}
+
+/* content */
+.content{
+	position:relative;
+	height:300px;
+	text-align:center;
+}
+
+.logo img{
+	width:270px;
+	margin-bottom: 30px;
+}
+
+.search input{
+	width: 539px;
+	height: 34px;
+	outline:none;
+}
+.btn_search input{
+	position:absolute;
+	width: 100px;
+	height: 36px;
+	color: white;
+	font-size: 15px;
+	background: #3385ff;
+	border-bottom: 1px solid #2d78f4;
+	border:0;
+	top: 162px;
+	right: 269px;
+	outline:none;
+}
+
+/* footer */
+.footer{
+	 position:relative;
+	 text-align:center;
+	 margin-top:150px;
+}
+
+.code{
+	margin-left:300px;
+
+}
+
+.cimg{
+	background:url('https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_62c636fe.png') no-repeat 0 0;
+    float: left;
+    width: 60px;
+    height: 60px;
+}
+.mobile , .nuomi{
+	float:left;
+	margin-left:50px;
+	font-size: 13px;
+	width:140px;
+	margin-top:10px;
+}
+.barcode_text{
+	height: 60px;
+	line-height: 25px;
+}
+
+
+.copyright{
+	float: right;
+    text-align: left;
+    line-height: 27px;
+    font-size: 13px;
+    width: 500px;
+    color: grey;
+}
+
+.copyright a , .barcode_text span{
+	color: grey;
+}
+
+.icp-icon{
+	background:url('https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_0e814c16.png') no-repeat;
+	width: 14px;
+    height: 17px;
+    display: inline-block;
+    overflow: hidden;
+    background-position: -600px -96px;
+    position: relative;
+    top: 3px;
+}
+
+.police-icon{
+	background:url('https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_0e814c16.png') no-repeat;
+	width: 14px;
+    height: 17px;
+    display: inline-block;
+    overflow: hidden;
+    background-position: -623px -96px;
+    position: relative;
+    top: 3px;
+    right:2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
