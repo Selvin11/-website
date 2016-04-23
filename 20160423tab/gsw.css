@@ -1,0 +1,37 @@
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-size:14px;
+  text-decoration:none;
+}
+#wrapper{
+  width:400px;
+  margin:100px auto;
+}
+#nav-title{
+  width:400px;
+  height:20px;
+  background:#ccc;
+}
+#nav-title li{
+  float:left;
+  margin-left:30px;
+  width:50px;
+}
+a{
+  color:#fff;
+}
+#nav-con{
+  background:#FFFDE5;
+  height:50px;
+  overflow:hidden;
+}
+.content{
+  height:40px;
+  margin-top: 20px;
+  margin-left:10px;
+}
+.select{
+  background:#800000;
+}
