@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>计时器</title>
+<script type="text/javascript">
+   function clock(){
+      var now=new Date();
+      var year = now.getFullYear() + "年",
+          month = now.getMonth() + "月",
+          date = now.getDate() + "日",
+          day = now.getDay(),
+          hour = now.getHours() + " :",
+          minute = now.getMinutes() + " :",
+          second = now.getSeconds();
+      week = ["星期一","星期二","星期三","星期四","星期五","星期六","星期日"];
+      var weekend = week[day];
+      var today = year + month + date + weekend  + hour + minute + second;
+      document.getElementById("clock").value = today;
+   }
+      var i = setInterval("clock()",100);
+    
+    function start() {
+      setInterval("clock()",1000);
+    }
+
+</script>
+</head>
+<body>
+  <form>
+    <input type="text" id="clock" size="50"  />
+    <input type="button" value="Start" onclick="start()" />
+    <input type="button" value="Stop" onclick="clearInterval(i)" />
+  </form>
+</body>
+</html>
