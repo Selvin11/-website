@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    .title{
+      width:400px;
+      height:80px;
+      margin:40px auto;
+      text-align:center;
+      font-size:24px;
+      color:#ccc;
+    }
+    .btns{
+      width:200px;
+      height:30px;
+      margin:0 auto;
+    }
+    .btns span{
+      display:inline-block;
+      float:left;
+      width:80px;
+      height:25px;
+      line-height:25px;
+      margin-left: 12px;
+      color:#fff;
+      text-align:center;
+      background-color:#E09740;
+      border-radius:10px;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="title" class="title">won!!!</div>
+  <div class="btns">
+    <span id="play">Start</span>
+    <span id="stop">End</span>
+  </div>
+  <script>
+    var data = ['iphone7','laika','sumsung','camera','thanks'],
+        num = 0,
+        timer = null;
+    var title = document.getElementById('title'),
+          play = document.getElementById('play'),
+          stop = document.getElementById('stop');
+    window.onload = function () {
+          //click
+          play.onclick = playFun;
+          stop.onclick = stopFun;
+          //keybord
+          document.onkeyup = function (e) {
+            e = event || window.event;
+            if (e.keyCode == 13) {
+              if (num == 0) {
+                playFun();
+                num = 1;
+              }else{
+                stopFun();
+                num = 0;
+              }
+            }
+          }
+    }
+
+    function playFun() {
+      clearInterval(timer);
+      timer = setInterval(function () {
+        var random = Math.floor(Math.random()*data.length);
+        title.innerHTML = data[random];
+      },100)
+      play.style.background = '#ccc';
+    }
+    function stopFun() {
+      clearInterval(timer);
+      play.style.background = '#E09740';
+    }
+  </script>
+</body>
+</html>
