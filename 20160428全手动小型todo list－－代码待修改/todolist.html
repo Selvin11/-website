@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #wrap{
+      margin:100px auto;
+      width:600px;
+    }
+    #write{
+      width:300px;
+      height:20px;
+      margin:0 auto;
+      display:block;
+      outline:none;
+      border:1px solid #9D98AE;
+      border-radius:5px;
+    }
+    #todolist{
+      width:300px;
+      margin:10px auto;
+
+    }
+    #todolist li{
+      margin-top:10px;
+      list-style-type:circle;
+      font-size:20px;
+    }
+    #todolist a{
+      display:inline-block;
+      margin-left:10px;
+      text-decoration:none;
+      color:#ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <input type="text" id="write">
+    
+      <ul id="todolist"></ul>
+    
+  </div>
+  <script>
+  window.onload = function () {
+    var btn = document.getElementById('write'),
+        content = document.getElementById('todolist');
+    btn.onkeydown = function (event) {
+      if (event.keyCode == 13) {
+        submitOn();
+      }
+    };
+    //函数
+     function submitOn() {
+      var btn_value = btn.value;
+      var list_value = document.createElement('li');
+      var deleteIcon = document.createElement("a");
+      deleteIcon.setAttribute('href', '#');
+      deleteIcon.innerHTML = 'x';
+      deleteIcon.onclick = function () {
+        content.removeChild(list_value);
+      }
+      list_value.innerHTML = btn_value;
+      content.appendChild(list_value);
+      list_value.appendChild(deleteIcon);
+      btn.value = '';
+     }
+    
+  }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
