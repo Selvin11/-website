@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+   #test{
+    width:300px;
+    height:200px;
+    position:relative;
+    background:#FF7F00;
+    left:-300px;
+   }
+   span{
+    width:20px;
+    height:40px;
+    position:absolute;
+    right:-20px;
+    top:80px;
+    background:#ccc;
+   }
+  </style>
+</head>
+<body>
+  <div id="test">
+    <span>更多</span>
+  </div>
+  <script>
+  window.onload = function () {
+      var btn = document.getElementById('test');
+      btn.onmouseover = function  () {       showDiv(0); 
+      }
+      btn.onmouseout = function () {
+        showDiv(-300);
+      }
+      var timer = null;
+      //函数封装
+      function showDiv(lastLeft) {
+        clearInterval(timer);
+        timer = setInterval(function(){
+          //缓冲运动，速度根据距离变化
+          var speed = (lastLeft - btn.offsetLeft)/10;
+          speed = speed>0?Math.ceil(speed):Math.floor(speed); 
+          if (btn.offsetLeft == lastLeft) {
+            clearInterval(timer);
+          }else{
+            btn.style.left = btn.offsetLeft + speed + 'px';
+          }
+      },30)
+    } 
+  }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
