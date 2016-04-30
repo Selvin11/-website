@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+<title>当前系统时间</title>
+<script language="javascript" type="text/javascript">
+
+  window.onload = function(){
+    var curTime = new Date(),
+        targetTime = new Date(2016,6,6),
+        leftTime = Math.ceil((targetTime.getTime() - curTime.getTime())/(24*60*60*1000));
+    document.getElementById('show').innerHTML ='距离高考还剩:' + leftTime + '天';
+  }
+
+
+    
+  
+    
+
+</script>
+</head>
+<body>
+<div class="content">
+  <div id="show">显示时间的位置</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>计时器</title>
+<script type="text/javascript">
+window.onload = function () {
+  var timeContent = document.getElementById("clock"),
+      startBtn = document.getElementById('start'),
+      stopBtn = document.getElementById('stop');
+  //开始
+  startBtn.onclick = function () {
+    start();
+  }
+  //结束
+  stopBtn.onclick = function () {
+    stop();
+  }
+  //时间函数
+  function addZero(i){
+    if (i<=9) {
+          i = '0' + i;
+          return i;
+        }else{
+          return i;
+        }
+  }
+  function nowTime() {
+    var now = new Date();
+    var year = now.getFullYear() + "年 ",
+        month = now.getMonth() + "月",
+        date = now.getDate() + "日 ",
+        day = now.getDay(),
+        hour = now.getHours() + " :",
+        minute = now.getMinutes(),
+        second = now.getSeconds();
+        minute = addZero(minute);
+        second = addZero(second);
+    var week = ["星期日 ","星期一 ","星期二 ","星期三 ","星期四 ","星期五 ","星期六 "],
+        weekend = week[day],
+        today = year + month + date + weekend  + hour + minute+':' + second;
+        timeContent.value = today;
+  }
+  var timer = null;
+  function start() {
+    timer = setInterval(nowTime,1000);
+  }
+  function stop() {
+    clearInterval(timer);
+  }
+}
+</script>
+</head>
+<body>
+  <form>
+    <input type="text" id="clock" size="50"  />
+    <input type="button" id="start" value="Start" />
+    <input type="button" id="stop" value="Stop" />
+  </form>
+</body>
+</html>
