@@ -36,7 +36,7 @@ feedObj.prototype.draw = function () {
 			ctx1.strokeStyle = "rgba(255,255,255," + alpha + ')';
 			ctx1.stroke();
 		}
-	}
+	} 
 	ctx1.restore();
 }
 feedObj.prototype.born = function (x,y) {

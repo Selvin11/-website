@@ -28,7 +28,9 @@ var data;
 var wave;
 //feed
 var feed;
-
+//漂浮物体
+var dust,
+	dustPic = [];
 
 //document.body.onload = game;
 window.onload = function () {
@@ -112,6 +114,13 @@ function init() {
 	//feed
 	feed = new feedObj();
 	feed.init();
+	//dust
+	for (var i = 0; i < 7; i++) {
+		dustPic[i] = new Image();
+		dustPic[i].src = './img/dust' + i + '.png';
+	}
+	dust = new dustObj();
+	dust.init();
 }
 //动画帧序列
 function gameloop() {
@@ -142,6 +151,8 @@ function gameloop() {
 	wave.draw();
 	//feed
 	feed.draw();
+	//dust
+	dust.draw();
 }
 
 //获取鼠标坐标值

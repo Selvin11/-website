@@ -45,7 +45,7 @@ fruitObj.prototype.draw = function () {
 			}else{
 				this.y[i] -= this.spd[i]*7*gapTime;
 			}
-				ctx2.drawImage(pic , this.x[i]-this.l[i]*0.5 , this.y[i]-this.l[i]*0.5 , this.l[i], this.l[i]);
+			ctx2.drawImage(pic , this.x[i] - this.l[i]*0.5 , this.y[i] - this.l[i]*0.5 , this.l[i], this.l[i]);
 			if (this.y[i] < 10) {
 				this.alive[i] = false;
 			}
@@ -54,7 +54,15 @@ fruitObj.prototype.draw = function () {
 }
 
 fruitObj.prototype.born = function (i) {
-	this.aneNo[i] = Math.floor(Math.random()*ane.num);
+	//确定出生所在海葵和其位置
+	// var aneID = Math.floor(Math.random()*ane.num);
+	// this.x[i] = ane.headx[aneID];
+	// this.y[i] = ane.heady[aneID];
+	this.aneNo[i] = Math.floor(Math.random() * ane.num);
+	var NO = this.aneNo[i];
+	this.x[i] = ane.headx[NO];
+	this.y[i] = ane.heady[NO];
+	
 	this.l[i] = 0;
 	this.alive[i] = true;
 	var ran = Math.random();
@@ -91,12 +99,3 @@ function sendFruit(){
 	}
 }
 
-fruitObj.prototype.update = function () {
-	var num = 0;
-	for (var i = 0; i < this.num; i++) {
-		if (this.alive[i]) {
-			num++;
-		}
-
-	}
-}

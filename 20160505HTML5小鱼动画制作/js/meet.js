@@ -38,6 +38,6 @@ function fishMomBabyMeet() {
 			data.addScore();
 			//feed fruit
 			feed.born(baby.x,baby.y);
-		}
+		} 
 	}
 }

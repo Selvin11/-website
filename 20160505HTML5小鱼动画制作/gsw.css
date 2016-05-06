@@ -1,11 +1,18 @@
 //canvas ready
+body{
+	padding-top: 10px;
+}
 .all_bg{
 	width:800px;
 	height: 600px;
 	margin:0 auto;
-
 }
-
+#allcanvas{
+	position: relative;
+	width:800px;
+	height: 600px;
+	margin:0 auto;
+}
 #canvas1{
 	position: absolute;
 	bottom: 0;

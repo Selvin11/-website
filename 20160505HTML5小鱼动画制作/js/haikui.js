@@ -5,7 +5,7 @@ var aneObj = function () {
 	this.heady = [];
 	this.amp = [];//摆动幅度
 	this.alpha = 0;
-}
+} 
 
 aneObj.prototype.num = 50;
 aneObj.prototype.init = function () {
