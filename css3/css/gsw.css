@@ -1,0 +1,192 @@
+/* reset */
+html{
+	width:100%;
+	height:100%;
+	-webkit-text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+	-0-text-size-adjust:none;
+	text-size-adjust:none;
+	/* 保证屏幕旋转时，文字大小不发生改变 */
+}
+
+body{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	background:#47c9af;
+	color:#74777b;
+	font-weight:300;
+	font-size:1.5em;
+	font-family:"Raleway","Arail";
+}
+ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+a:link,a:visited,a:focus{
+	text-decoration:none;
+	outline:none;
+}
+*,*:after,*:before{
+	/* 任何标签动态生产的内容，所有添加的margin，padding，border都不影响盒子的大小 */
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+}
+*:after,*:before{
+	display:block;
+	content:"";
+}
+*:after{
+	clear:both;
+}
+/* nav */
+.nav{
+	width:800px;
+	height:300px;
+	margin:200px auto;
+}
+.nav li{
+	display:inline-block;
+	margin:0 1em;
+}
+.tooltip{
+	display:inline-block;
+	font-weight:700;
+	color:rgba(0, 0, 0, 0.3);
+	position:relative;
+	z-index:999;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+.tooltip:hover{
+	color:rgba(255, 255, 255, 1);
+
+}
+/* a中的span标签 */
+.tooltip-content{
+	position:absolute;
+	z-index:9999;
+	width:80px;
+	height:80px;
+	border-radius:50%;
+	background:#fff;
+	/* 使圆居中 */
+	left:50%;
+	margin-left:-40px;
+	bottom:100%;
+	margin-bottom: 20px;
+	text-align:center;
+	padding-top: 25px;
+	color: #47c9af;
+	opacity:0;
+	 /* transition使透明度平滑过渡 */
+	 -webkit-transition: opacity 0.3s,-webkit-transform 0.3s;
+	 transition: opacity 0.3s transform 0.3s;
+}
+.tooltip-content .tooltip-content i{
+	opacity:0;
+	-webkit-transition: opacity 0.3s,-webkit-transform 0.3s;
+	 transition: opacity 0.3s,transform 0.3s;
+}
+.tooltip-content::after{
+	display:block;
+	content:"";
+	width:30px;
+	height:20px;
+	background:url('../img/tooltip1.svg') no-repeat center center;
+	background-size:100%;
+	position:absolute;
+	top:100%;
+	left:50%;
+	margin:-7px 0 0 -15px;
+}
+/* animate transform:translate，rotated，scaled
+   设置动画初始样式*/
+.tooltip-effect-1 .tooltip-content{
+	/* css3的3d属性都可以开启移动端的硬件加速 */
+	-webkit-transform: translate3d(0, 10px, 0) rotate3d(1, 1, 1, 45deg);
+	transform:translate3d(0, 10px, 0) rotate3d(1, 1, 1, 45deg);
+	/* origin定位中心，以图形底边中心为中心 */
+	-webkit-transform-origin:50% 100%;
+}
+.tooltip-effect-1 .tooltip-content i{
+	-webkit-transform: scale3d(0, 0, 1);
+	transform: scale3d(0, 0, 1);
+}
+/* .tooltip-effect-2 .tooltip-content */
+.tooltip-effect-2 .tooltip-content{
+	-webkit-transform: translate3d(0, 20px, 0);
+	transform: translate3d(0, 20px, 0);
+}
+.tooltip-effect-2 .tooltip-content i{
+	-webkit-transform: translate3d(0, 15px, 0);
+	transform: translate3d(0, 15px, 0);
+}
+/* .tooltip-effect-3 .tooltip-content */
+.tooltip-effect-3 .tooltip-content{
+	-webkit-transform: translate3d(0, 10px, 0) rotate3d(0, 1, 0, 90deg);
+	transform: translate3d(0, 10px, 0)  rotate3d(0, 1, 0, 90deg);
+	-webkit-transform-origin:50% 100%;
+}
+.tooltip-effect-3 .tooltip-content i{
+	-webkit-transform: translate3d(0, 15px, 0) scale3d(0, 0, 1);
+	transform: translate3d(0, 15px, 0) scale3d(0, 0, 1);
+}
+/* .tooltip-effect-4 .tooltip-content */
+.tooltip-effect-4 .tooltip-content{
+	-webkit-transform: translate3d(0, 20px, 0) ;
+	transform: translate3d(0, 20px, 0) ;
+}
+.tooltip-effect-4 .tooltip-content i{
+	-webkit-transform: translate3d(0, 0px, 0) ;
+	transform: translate3d(0, 0px, 0) ;
+}
+/*  */
+.tooltip-effect-5 .tooltip-content{
+	-webkit-transform: scale3d(0, 0, 0);
+	transform: scale3d(0, 0, 0);
+	-webkit-transform-origin:50% 100%;
+	transform-origin:50% 100%;
+}
+.tooltip-effect-5 .tooltip-content i{
+	-webkit-transform: translate3d(0, 0px, 0) ;
+	transform: translate3d(0, 0px, 0) ;
+}
+/* 结束时候的最终统一样式 */
+.tooltip:hover .tooltip-content,
+.tooltip:hover .tooltip-content i{
+	opacity:1;
+	-webkit-transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0) scale3d(1, 1, 1);
+	transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0) scale3d(1, 1, 1);
+}
+/* transform 将动画的主要帧序列绘制出来（最后的展现样式和需要改变的样式）
+   transition 将动画的前后样式平滑的展现出来，参数为样式和时间*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
