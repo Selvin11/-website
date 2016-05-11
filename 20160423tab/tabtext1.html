@@ -89,104 +89,100 @@
     </ul>
   </div>
 </div>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js
+"></script>
  <script type="text/javascript">
-         
-    // JS实现选项卡切换
-    // //window.onload = function(){
-    //   var nav = document.getElementById('nav');
-    //   var listNav = nav.getElementsByTagName('li');
-    //   var content = document.getElementById('content');
-    //   var contentList = content.getElementsByTagName('ul');
-      
-    //   for (var i = 0; i < listNav.length; i++) {
-    //     listNav[i].id = i;  
-    //     listNav[i].onclick = function(){
-    //       for (var j = 0; j < contentList.length; j++) {
-    //          listNav[j].className = '';
-    //          listNav[j].style.border='';
-    //        contentList[j].style.display = "none";
-    //       }
-    //       this.className = "select";
-    //       this.style.borderTop="2px solid red";
-    //       contentList[this.id].style.display = "block";
-    //     }
-    //   }  }
-    //   延迟切换
-  //   window.onload = function(){
-  //     var nav = document.getElementById('nav');
-  //     var listNav = nav.getElementsByTagName('li');
-  //     var content = document.getElementById('content');
-  //     var contentList = content.getElementsByTagName('ul');
-  //     var timer = null;
-      
-  //     for (var i = 0; i < listNav.length; i++) {
-  //       listNav[i].id = i;  
-  //       listNav[i].onclick = function(){
-  //         var that = this;
-  //         if (timer) {
-  //           clearTimeout(timer);
-  //           timer = null;
-  //         }
-  //         timer = window.setTimeout(function () {
-  //           for (var j = 0; j < contentList.length; j++) {
-  //            listNav[j].className = '';
-  //            listNav[j].style.border='';
-  //          contentList[j].style.display = "none";
-  //         }
 
-  //         that.className = "select";
-  //         that.style.borderTop="2px solid red";
-  //         contentList[that.id].style.display = "block";
-  //         },500)
-  //     }  
+$(function(){
+  var $contentList = $("#content ul");
+  var $listNav = $("#nav li");
+  var timer = null;
+  var index = 0; 
+  $listNav.each(function (index,element) {
+    var currentIndex = $(this).index();
+    $(this).click(function(){
+      clearInterval(timer);
+      showTab(currentIndex);
+    });
+    index++;
+    $(this).mouseup(function(){
+      timer = setInterval(autoTab,2000);
+    });
+  });
+// 清除定时器
+  if (timer) {
+    clearInterval(timer);
+    timer = null;
+  }
+// 设定定时器
+  timer = setInterval(autoTab,2000);
+// 自动切换函数
+  function autoTab() {
+    index++;
+    if (index >= $listNav.length) {
+      index=0;
+    }
+    showTab(index);
+  }
+// 封装showTab函数
+  function showTab(currentIndex) {
+    $listNav.each(function(){
+      $(this).css("border","").removeClass();
+      $contentList.hide();
+    })
+      $listNav.eq(currentIndex).css("borderTop","2px solid red").addClass("select");
+      $contentList.eq(currentIndex).show();
+  }
+})
+
+  // window.onload = function () {
+  //   var nav = document.getElementById('nav');
+  //   var listNav = nav.getElementsByTagName('li');
+  //   var content = document.getElementById('content');
+  //   var contentList = content.getElementsByTagName('ul');
+  //   var timer = null;
+  //   var index = 0;
+  //   for (var j = 0; j < listNav.length; j++) {
+  //       listNav[j].id = j;  
+  //       contentList[j].style.display = 'none';
+  //       listNav[j].onmouseover = function(){
+  //       clearInterval(timer);
+  //       tabOption(this.id);
+  //       }
+  //       listNav[j].onmouseout =function () {
+  //         timer = setInterval(autoTab,2000)
+  //       }
+  //   }
+  //   if (timer) {
+  //     clearInterval(timer);
+  //     timer = null;
+  //   }
+  //   timer = setInterval(autoTab,2000)
+
+  //   //package function
+  //   function autoTab() {
+  //     index++;
+  //     if (index>=listNav.length) {
+  //       index = 0;
+  //     }
+  //     tabOption(index);
+
+  //   }
+  //   function tabOption(currentIndex) {
+  //     for (var i = 0; i < listNav.length; i++) {
+  //       listNav[i].className = '';
+  //       listNav[i].style.border='';
+  //       contentList[i].style.display = 'none';
+
+  //     }
+  //     listNav[currentIndex].className = "select";
+  //     listNav[currentIndex].style.borderTop="2px solid red";
+  //     contentList[currentIndex].style.display = "block";
+  //      index = currentIndex;
   //   }
   // }
+  function showTab(){
 
-  window.onload = function () {
-    var nav = document.getElementById('nav');
-    var listNav = nav.getElementsByTagName('li');
-    var content = document.getElementById('content');
-    var contentList = content.getElementsByTagName('ul');
-    var timer = null;
-    var index = 0;
-    for (var j = 0; j < listNav.length; j++) {
-        listNav[j].id = j;  
-        contentList[j].style.display = 'none';
-        listNav[j].onmouseover = function(){
-        clearInterval(timer);
-        tabOption(this.id);
-        }
-        listNav[j].onmouseout =function () {
-          timer = setInterval(autoTab,2000)
-        }
-    }
-    if (timer) {
-      clearInterval(timer);
-      timer = null;
-    }
-    timer = setInterval(autoTab,2000)
-
-    //package function
-    function autoTab() {
-      index++;
-      if (index>=listNav.length) {
-        index = 0;
-      }
-      tabOption(index);
-
-    }
-    function tabOption(currentIndex) {
-      for (var i = 0; i < listNav.length; i++) {
-        listNav[i].className = '';
-        listNav[i].style.border='';
-        contentList[i].style.display = 'none';
-
-      }
-      listNav[currentIndex].className = "select";
-      listNav[currentIndex].style.borderTop="2px solid red";
-      contentList[currentIndex].style.display = "block";
-       index = currentIndex;
-    }
   }
 </script>
  
