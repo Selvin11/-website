@@ -1,3 +1,4 @@
+// 
 function addLoadEvent(func) {
   var oldonload = window.onload;
   if (typeof window.onload != 'function') {
@@ -9,7 +10,7 @@ function addLoadEvent(func) {
     }
   }
 }
-
+// 封装insertAfter函数
 function insertAfter(newElement,targetElement) {
   var parent = targetElement.parentNode;
   if (parent.lastChild == targetElement) {
