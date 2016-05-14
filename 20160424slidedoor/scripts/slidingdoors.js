@@ -100,6 +100,28 @@ function onDOMContentLoaded(onready,config){
 }
 
 //silidingdoors
+// $(function(){
+//     var $con = $("#container"),
+//          $imgs = $("img"),
+//         imgWidth = $imgs.width(),
+//         leakWidth = 160,
+//         containerWidth = imgWidth + ($imgs.length - 1)*leakWidth;
+//         $con.width(containerWidth);
+//         var scrollWidth = imgWidth - leakWidth;
+//         $imgs.each(function(){
+//             $(this).css("left",imgWidth + ($(this).index() - 1)*leakWidth);
+//             $(this).mouseover(function(){
+//                 $(this).css("left",function(index,value){
+//                     return value - scrollWidth;
+//                 });
+//             })
+//             // $(this).mouseout(function(){
+//             //     $(this).offset().left = imgWidth + ($(this).index() - 1)*leakWidth ;
+//             // })
+//         });
+// })
+    
+    
 window.onload = function () {
 	var con = document.getElementById('container');
 	var imgs = con.getElementsByTagName('img'),
