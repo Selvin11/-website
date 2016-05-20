@@ -1,0 +1,154 @@
+@charset "utf-8";
+@import "reset.css";
+// ------clearfix-------
+.clearfix:after { 
+    content:"\200B"; 
+    display:block; 
+    height:0; 
+    clear:both; 
+} 
+.clearfix {*zoom:1;}/*IE/7/6*/
+
+//@header---------------------
+@mixin background-linear($color...){
+    //to bottom
+    background:linear-gradient(to bottom,$color);
+    -webkit-background:linear-gradient(to bottom,$color);
+}
+
+.header{
+    width:100%;
+    height: 45px;
+    position: fixed;
+    //for IE
+    background: #0767c8;
+    @include background-linear(#086ed5,#055db5);
+    border-bottom: 1px solid #044e97;
+    box-shadow: 0 1px 2px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.15);
+    a.logo{
+        width: 61px;
+        height: 100%;
+        display: block;
+        float: left;
+        text-indent: -9999px;
+        background: url('../img/logo.png') no-repeat;
+        background-position: 0 8px;
+        background-size:61px 30px;
+    }
+    .user{
+        width: 120px;
+        height: 100%;
+        line-height: 45px;
+        margin-left: 15px;
+        float: right;
+        position:relative;
+        text-indent: 46px;
+        font-size:14px;
+        img{
+            position:absolute;
+            left:0;
+            top:9px;
+            left:10px;
+            border: 1px solid rgba(0,0,0,.1);
+            border-radius:3px;
+            box-shadow: 0 1px 0 rgba(255,255,255,.1);
+        }
+
+    }
+    //提问btn
+    .btn_q{
+        width:66px;
+        height: 32px;
+        margin-top: 7px;
+        line-height: 26px;
+        color:#FFF;
+        font-size: 14px;
+        float: right;
+        @include background-linear(#0e7bef,#0d73da);
+        border: 1px solid #045bb2;
+        border-radius:4px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.05),inset 0 1px 1px rgba(255,255,255,.15);
+    }
+    div.search{
+        width:367px;
+        margin: 7px 0 0 12px;
+        float: left;
+        form{
+            width: 100%;
+            position:relative;
+        }
+        .input_search{
+            width: 100%;
+            padding: 7px 50px 7px 10px;
+            //使用IE盒子模型
+            box-sizing:border-box;
+            color: #49525c;
+            font-size: 14px;
+            background-color: #e1eaf2;
+            border: 1px solid #045bb2;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,.2),0 1px 0 rgba(255,255,255,.1);
+        }
+        .btn_search{
+            width:40px;
+            height: 100%;
+            position:absolute;
+            top:0;
+            right:0;
+            color: inherit;
+            outline:0;
+            @include background-linear(#0e7bef,#0d73da);
+            border: 1px solid #045bb2;
+            box-shadow: 0 1px 2px rgba(0,0,0,.05),inset 0 1px 1px rgba(255,255,255,.15);
+            border-top-right-radius:4px;
+            border-bottom-right-radius:4px;
+        }
+    }
+    .nav{
+        width:234px;
+        height: 100%;
+        float: left;
+    }
+    .nav_content{
+         line-height: 45px;
+         margin-left: 18px;
+        li{
+            float: left;
+        }
+        a{
+            width:54px;
+            height: inherit;
+            display: block;
+            color: #FFF;
+            text-align:center;
+            text-decoration: none;
+            font-size: 14px;
+            text-shadow: 0 1px 1px rgba(0,0,0,.1);
+        }
+    }
+
+}
+.wrap{
+    width:960px;
+    height: 100%;
+    margin: 0 auto;
+    // position:relative;
+    color:#FFF;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
