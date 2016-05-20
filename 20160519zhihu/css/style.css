@@ -88,29 +88,69 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.15);
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px; }
-  .header .nav {
-    width: 234px;
-    height: 100%;
+
+.nav {
+  width: 234px;
+  height: 100%;
+  float: left; }
+
+.nav_content {
+  line-height: 45px;
+  margin-left: 18px; }
+  .nav_content li {
     float: left; }
-  .header .nav_content {
-    line-height: 45px;
-    margin-left: 18px; }
-    .header .nav_content li {
-      float: left; }
-    .header .nav_content a {
-      width: 54px;
-      height: inherit;
-      display: block;
-      color: #FFF;
-      text-align: center;
-      text-decoration: none;
-      font-size: 14px;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+  .nav_content a {
+    width: 54px;
+    height: inherit;
+    display: block;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
 
 .wrap {
   width: 960px;
   height: 100%;
   margin: 0 auto;
   color: #FFF; }
+
+.user:hover .user_info {
+  display: block; }
+
+.user_info {
+  width: 100%;
+  position: absolute;
+  top: 45px;
+  display: none; }
+  .user_info li a {
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    color: #FFF;
+    display: block;
+    background-color: #0267cc;
+    text-decoration: none;
+    text-indent: 0; }
+    .user_info li a:hover {
+      background-color: #095fb3; }
+  .user_info li:last-child > a {
+    border-radius: 0 0 4px 4px; }
+  .user_info i {
+    width: 20px;
+    height: 20px;
+    margin: 0 11px 0 15px;
+    vertical-align: -5px;
+    display: inline-block;
+    background: url("../img/icon-zhihu.png") no-repeat;
+    background-size: 308px 250px; }
+  .user_info .icon_home {
+    background-position: -5px -7px; }
+  .user_info .icon_letter {
+    background-position: -5px -36px; }
+  .user_info .icon_set {
+    background-position: -5px -60px; }
+  .user_info .icon_out {
+    background-position: -5px -87px; }
 
 /*# sourceMappingURL=style.css.map */
