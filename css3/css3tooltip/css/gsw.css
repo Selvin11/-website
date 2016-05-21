@@ -86,13 +86,13 @@ a:link,a:visited,a:focus{
 	color: #47c9af;
 	opacity:0;
 	 /* transition使透明度平滑过渡 */
-	 -webkit-transition: opacity 0.3s,-webkit-transform 0.3s;
-	 transition: opacity 0.3s transform 0.3s;
+	 -webkit-transition: all 0.3s;
+	 transition: all 0.3s;
 }
-.tooltip-content .tooltip-content i{
+.tooltip .tooltip-content i{
 	opacity:0;
-	-webkit-transition: opacity 0.3s,-webkit-transform 0.3s;
-	 transition: opacity 0.3s,transform 0.3s;
+	-webkit-transition: all 0.3s;
+	 transition: all 0.3s;
 }
 .tooltip-content::after{
 	display:block;
@@ -110,7 +110,7 @@ a:link,a:visited,a:focus{
    设置动画初始样式*/
 .tooltip-effect-1 .tooltip-content{
 	/* css3的3d属性都可以开启移动端的硬件加速 */
-	-webkit-transform: translate3d(0, 10px, 0) rotate3d(1, 1, 1, 45deg);
+	-webkit-transform: translate3d(0, 10px, 0) rotate3d(1, 1, 1, 45deg) ;
 	transform:translate3d(0, 10px, 0) rotate3d(1, 1, 1, 45deg);
 	/* origin定位中心，以图形底边中心为中心 */
 	-webkit-transform-origin:50% 100%;
@@ -155,8 +155,8 @@ a:link,a:visited,a:focus{
 	transform-origin:50% 100%;
 }
 .tooltip-effect-5 .tooltip-content i{
-	-webkit-transform: translate3d(0, 0px, 0) ;
-	transform: translate3d(0, 0px, 0) ;
+	-webkit-transform: translate3d(0, 0, 0) ;
+	transform: translate3d(0, 0, 0) ;
 }
 /* 结束时候的最终统一样式 */
 .tooltip:hover .tooltip-content,
