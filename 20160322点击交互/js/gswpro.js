@@ -23,13 +23,14 @@ function addLoadEvent(func) {
 // }
 // 
 function preparePlaceholder() {
-  var placeholder = $("<img id='placeholder' src='img/sun.jpg' alt='my image gallery'></img>");
-  var description = $("<p id='description'></p>").text("Choose an image");
-  var gallery = $("#imagegallery");
+  var placeholder = $("<img id='placeholder' src='img/sun.jpg' alt='my image gallery'></img>"),
+      description = $("<p id='description'></p>").text("Choose an image"),
+      gallery = $("#imagegallery");
   gallery.after(placeholder);
   placeholder.after(description);
 
 }
+// 第一版 原生JS
 // function preparePlaceholder() {
 //   if (!document.createElement) return false;
 //   if (!document.createTextNode) return false;
@@ -47,12 +48,20 @@ function preparePlaceholder() {
 //   insertAfter(placeholder,gallery);
 //   insertAfter(description,placeholder);
 // }
-// jquery 改写prepareGallery函数
+// 第二版 jquery 改写prepareGallery函数
+// function prepareGallery() {
+//   $("#imagegallery a").each(function(){
+//     $(this).click(function(){
+//       return showPic(this);
+//     })
+//   })
+// }
+// 第三版 优化jquery
 function prepareGallery() {
-  $("#imagegallery a").each(function(){
-    $(this).click(function(){
+  $("#imagegallery a").each(function(e){
+    this.onclick = function(){
       return showPic(this);
-    })
+    }
   })
 }
 // function prepareGallery() {
@@ -70,8 +79,11 @@ function prepareGallery() {
 // }
 // jquery 重构showPic函数
 function showPic (whichpic) {
-  $("#placeholder").attr('src',$(whichpic).attr('href'));
-  $("#description").text($(whichpic).attr('title'));
+  var placeholder = $("#placeholder"),
+      description = $("#description");
+  placeholder.attr('src',$(whichpic).attr('href'));
+  description.text($(whichpic).attr('title'));
+  //取消连接默认跳转属性
   return false;
 }
 // function showPic(whichpic) {
@@ -91,6 +103,10 @@ function showPic (whichpic) {
 //   }
 //   return false;
 // }
-
-addLoadEvent(preparePlaceholder);
-addLoadEvent(prepareGallery);
+//jquery ready方法
+$(function(){
+  preparePlaceholder();
+  prepareGallery();
+})
+// addLoadEvent(preparePlaceholder);
+// addLoadEvent(prepareGallery);

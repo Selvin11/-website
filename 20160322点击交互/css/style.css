@@ -1,21 +1,17 @@
 body{
 	margin:0;
 	padding:0;
-	
 	font-family:"Helvetica";
 }
-
 h1{
 	float:left;
 	margin-left:100px;
 	margin-top:30px;
 	font-family:serif;
-	
 }
 ul{
 	list-style:none;
 	margin-left:360px;
-	
 }
 a{
 	color:#333;text-decoration:none
@@ -23,7 +19,6 @@ a{
 li{ 
 	float:left;
 	margin-top:30px;
-	
 }
 li a{ 
 	display:block;
@@ -46,7 +41,6 @@ li a:hover{
 	margin-top:30px;
 	position:relative;
 }
-
 p{
 	margin-left:80%;
 	margin-top:20px;	
