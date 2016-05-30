@@ -1,0 +1,165 @@
+.gsw {
+  font: 12px/150% Arial,Verdana,"\5b8b\4f53"; }
+
+.clearfix:after {
+  content: "\200B";
+  display: block;
+  height: 0;
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+/*IE/7/6*/
+.wrap {
+  width: 1210px;
+  margin: 0 auto; }
+
+.line::after {
+  content: "|";
+  position: absolute;
+  right: -6px; }
+
+.triangle {
+  height: 6px;
+  overflow: hidden;
+  font: 400 14px/16px consolas;
+  position: absolute;
+  top: 12px;
+  right: 0px;
+  transform: rotateZ(-180deg);
+  -webkit-transform: rotateZ(-180deg);
+  -moz-transform: rotateZ(-180deg);
+  transition: transform, 0.2s, ease-in-out;
+  -webkit-transition: transform, 0.2s, ease-in-out;
+  -moz-transition: transform, 0.2s, ease-in-out; }
+
+span.triangle {
+  top: 12px;
+  right: 14px; }
+
+.topNav {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  color: #666;
+  background-color: #F1F1F1; }
+  .topNav .tn-left {
+    width: 95px;
+    float: left; }
+  .topNav .tn-right {
+    float: right; }
+
+.tn-left {
+  position: relative; }
+  .tn-left:hover .triangle {
+    transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg); }
+
+.tn-right li {
+  float: left;
+  position: relative;
+  text-align: center; }
+  .tn-right li:hover .triangle {
+    transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg); }
+.tn-right a {
+  color: #666;
+  display: inline-block;
+  position: relative;
+  padding: 0 14px;
+  text-decoration: none; }
+.tn-right .noborder {
+  border: 0; }
+.tn-right .ared {
+  color: #C81623; }
+.tn-right .cp {
+  padding: 0; }
+
+.header {
+  width: 100%;
+  height: 100px; }
+  .header .logo {
+    float: left;
+    width: 362px;
+    margin-top: 20px; }
+  .header .search {
+    float: left;
+    position: relative;
+    margin-top: 25px; }
+  .header .shop-car {
+    float: right;
+    margin: 25px 65px 0 0;
+    position: relative; }
+
+.logo a {
+  display: inline-block;
+  width: 270px;
+  height: 60px;
+  background: url("http://misc.360buyimg.com/lib/img/e/logo-201305.png") no-repeat 0 0;
+  text-indent: -9999px; }
+
+.search input {
+  width: 456px;
+  height: 24px;
+  padding: 4px;
+  border: 2px solid #B61D1D; }
+.search button {
+  width: 82px;
+  height: 36px;
+  background-color: #B61D1D;
+  border: 0;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+.shop-car a {
+  display: block;
+  width: 75px;
+  height: 34px;
+  line-height: 34px;
+  padding: 0 28px 0 36px;
+  background-color: #F9F9F9;
+  text-decoration: none;
+  color: #666; }
+.shop-car:hover {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd; }
+  .shop-car:hover a {
+    background-color: #fff; }
+  .shop-car:hover .shop-info {
+    display: block; }
+
+.shop-info {
+  width: 278px;
+  height: 49px;
+  position: absolute;
+  right: -1px;
+  top: 30px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  display: none;
+  z-index: 1; }
+
+.mask {
+  width: 139px;
+  height: 4px;
+  position: absolute;
+  right: 0;
+  top: -4px;
+  background: #fff;
+  z-index: 2; }
+
+.overshop {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  display: block; }
+
+/*# sourceMappingURL=gsw.css.map */

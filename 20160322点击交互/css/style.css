@@ -1,3 +1,13 @@
+//简易demo,粗暴了哈
+*{
+	margin: 0;
+	padding: 0;
+}
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
 body{
 	margin:0;
 	padding:0;
@@ -9,12 +19,14 @@ h1{
 	margin-top:30px;
 	font-family:serif;
 }
-ul{
+#imagegallery{
 	list-style:none;
-	margin-left:360px;
+	margin-left:25em;
 }
+
 a{
-	color:#333;text-decoration:none
+	color:#333;
+	text-decoration:none;
 }
 li{ 
 	float:left;
@@ -33,11 +45,10 @@ li a:hover{
 	background-color:#F60;
 	color:#fff
 }
-
 #placeholder{
 	width:65%;
 	height:376px;
-	margin-left:25em;
+	margin-left:27em;
 	margin-top:30px;
 	position:relative;
 }
