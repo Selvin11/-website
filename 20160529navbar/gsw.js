@@ -87,16 +87,16 @@ console.log((-3.3).integer())
 	
 // })
 
-var ai = function (elems) {
-	for (var i = 0; i < elems.length; i++) {
-		elems[i].id = i;
-		elems[i].onclick = function (event) {
-			console.log(this.id + ":" + event.target)
-		}
-	}
-};
-var lis = document.getElementsByTagName('li');
-ai(lis);
+// var ai = function (elems) {
+// 	for (var i = 0; i < elems.length; i++) {
+// 		elems[i].id = i;
+// 		elems[i].onclick = function (event) {
+// 			console.log(this.id + ":" + event.target)
+// 		}
+// 	}
+// };
+// var lis = document.getElementsByTagName('li');
+// ai(lis);
 
 //柯里化 Curry					
 Function.method('curry',function(){

@@ -1,22 +1,4 @@
-// //jQuery中的DOM操作
 
-// var li_text = $('ul li:eq(2)').text();//获取第二个li元素
-// //alert(li_text);
-// var $para = $('p');
-// var p_txt = $para.attr('title');//获取P属性节点
-//  // alert(p_txt);
-
-
-// var $li_1 = $('<li>🍌</li>');
-// var $li_2 = $('<li>雪梨</li>');
-// $('ul').append($li_1);
-// $('ul').append($li_2);
-// $li_1.insertAfter($li_2);
-// $li_1.click(function(){
-// 	$(this).clone().appendTo('ul');
-// })
-
-// $('ul').wrap("<b></b>");//wrap()
 
 // $(function(){
 // 	//mouse focus make it "" 登录名

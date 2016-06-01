@@ -162,4 +162,41 @@ span.triangle {
   border: 1px solid #ddd;
   display: block; }
 
+.mainNav {
+  width: 100%;
+  font: 400 15px/44px "microsoft yahei";
+  border-bottom: 2px solid #B1191A; }
+  .mainNav a {
+    text-decoration: none; }
+
+.mainNav .m-shop {
+  width: 210px;
+  height: 44px;
+  float: left; }
+  .mainNav .m-shop a {
+    display: block;
+    width: 190px;
+    padding: 0 10px;
+    height: 100%;
+    line-height: 44px;
+    color: #fff;
+    background-color: #B1191A; }
+
+.mainNav .m-list {
+  height: 100%;
+  float: left; }
+  .mainNav .m-list li {
+    height: 100%;
+    line-height: 44px;
+    float: left;
+    text-align: center; }
+  .mainNav .m-list a {
+    width: 48px;
+    display: block;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #333; }
+    .mainNav .m-list a:hover {
+      color: #C81623; }
+
 /*# sourceMappingURL=gsw.css.map */
