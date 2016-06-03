@@ -107,7 +107,16 @@ Function.method('curry',function(){
 	}
 })
 
-
+// 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
+var arr = [1,2,2,3,3]
+function uniqArray(arr) {
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i-1] == arr[i]) {
+			arr.splice(i,1);
+		}
+	}
+	return arr;
+}
 // function xh() {
 // 	var n = setTimeout(function(){
 // 	console.log(n);
