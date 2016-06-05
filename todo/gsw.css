@@ -26,13 +26,11 @@ a{
 
 .header{
 	width:100%;
-	height:60px;
-	background-color:#000;
+	background-color:#8F8E91;
 }
 .header a{
 	display:block;
 	width:20%;
-	line-height:60px;
 	padding-left:5%;
 	font-size:30px;
 	color:#fff;
@@ -40,6 +38,7 @@ a{
 }
 .left-list{
 	float:left;
+	position:relative;
 	width:20%;
 	background-color:#E6E6E6;
 	border:1px solid #D1D1D1;
@@ -53,14 +52,16 @@ a{
 .left-list ul li{
 	margin:5px 10px;
 }
-
+.left-list ul ul{
+	padding-left:10px;
+}
 .add-list{
-	width:20%;
+	width:100%;
 	height:30px;
 	line-height:30px;
 	position:absolute;
 	bottom: 0;
-	background-color:#211B0E;
+	background-color:#8F8E91;
 }
 .add-list a{
 	padding-left:50px;
@@ -74,8 +75,8 @@ a{
 
 /* 二级分栏 */
 .task-list{
-	position:absolute;
-	left:20.1%;
+	float:left;
+	position:relative;
 	width:15%;
 	border:1px solid #D1D1D1;
 	border-left:none;
@@ -91,6 +92,7 @@ a{
 	padding:0 5px;
 
 }
+
 .task-list .task{
 	position:relative;
 	font-size:13px;
@@ -102,7 +104,30 @@ a{
 .task-list .task  ul{
 	padding-left:20px;
 }
-.task-list .add-list{
-	width:100%;
-	bottom:-1px;
+
+
+/* text内容区域 */
+.text{
+	float:left;
+	width:64.7%;
+	background-color:#ccc;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
