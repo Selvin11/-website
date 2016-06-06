@@ -8,28 +8,65 @@ var Todo = {
 		var header = $('.header')[0];
 		var taskList = $('.task-list')[0];
 		var headerHeight = header.clientHeight;
-		todo.addList = function (innerContent,parentNode,type) {
-			var li = document.createElement('li');
+		todo.addDt = function (innerContent,parentNode,describe) {
+			// 创建目录dt
+			var dt = document.createElement('dt');
+			// 目录名
 			var span1 = document.createElement('span');
+			// 删除键
 			var span2 = document.createElement('span');
-			var lists = parentNode.childNodes;
-			li.innerHTML = innerContent;
-			parentNode.appendChild(li);
-			for (var i = 0; i < lists.length; i++) {
-				
-				span1.innerHTML = type;
-				li.insertBefore(span1,li.firstChild);
+			var ds = parentNode.children;
+			for (var k = 0; k < ds.length; k++) {
+				if(ds[k].className === innerContent){
+					return;
+				}
+			}
+			dt.innerHTML = innerContent;
+			parentNode.appendChild(dt);
+			for (var i = 0; i < ds.length; i++) {
+				// 标记
+				dt.className = innerContent;
+				span1.innerHTML = describe;
+				dt.insertBefore(span1,dt.firstChild);
+				// 暂时性的删除设置
 				span2.innerHTML = ' X ';
 				span2.className = 'del';
-				li.appendChild(span2);
+				dt.appendChild(span2);
 			}
 			
 		};
-		todo.removeList = function (parentNode,nodename) {
+		todo.addDd = function (innerContent,parentNode,target,describe) {
+			// 创建文件dd
+			var dd = document.createElement('dd');
+			// 目录名
+			var span1 = document.createElement('span');
+			// 删除键
+			var span2 = document.createElement('span');
+			var ds = parentNode.children;
+			for (var k = 0; k < ds.length; k++) {
+				if(ds[k].className === innerContent){
+					return;
+				}
+			}
+			dd.innerHTML = innerContent;
+			insertAfter(dd,target);
+			for (var i = 0; i < ds.length; i++) {
+				// 标记
+				dd.className = innerContent;
+				span1.innerHTML = describe;
+				dd.insertBefore(span1,dd.firstChild);
+				// 暂时性的删除设置
+				span2.innerHTML = ' X ';
+				span2.className = 'del';
+				dd.appendChild(span2);
+			}
+			
+		};
+		todo.removeDs = function (parentNode,nodename) {
 			// 删除功能
 			var dels = $('.del');
 			var arr = [];
-
+			// 浅拷贝数组
 			for (var j = 0; j < dels.length; j++) {
 				arr[j] = dels[j];
 				arr[j].onclick = function (e) {
@@ -45,9 +82,9 @@ var Todo = {
 		};
 		todo.addDiv = function (n) {
 
-			
-			for (var i = 0; i < taskList.children.length; i++) {
-				if(taskList.children[i].className === ('task' + n)){
+			var taskChild =taskList.children;
+			for (var i = 0; i < taskChild.length; i++) {
+				if(taskChild[i].className === ('task' + n)){
 					return;
 				}
 			}
@@ -72,7 +109,6 @@ var Todo = {
 		return todo;	
 	}
 };
-
 
 
 

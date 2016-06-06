@@ -49,11 +49,12 @@ a{
 	font-size:18px;
 }
 
-.left-list ul li{
+.left-list dl dt ,
+.left-list dl dd{
 	margin:5px 10px;
 }
-.left-list ul ul{
-	padding-left:10px;
+.left-list dl dd{
+	padding-left:30px;
 }
 .add-list{
 	width:100%;
@@ -74,34 +75,34 @@ a{
 }
 
 /* 二级分栏 */
-.task-list{
+.mid-list{
 	float:left;
 	position:relative;
 	width:15%;
 	border:1px solid #D1D1D1;
 	border-left:none;
 }
-.task-list .nav{
+.mid-list .nav{
 	height:30px;
 	line-height:30px;
 	text-align:center;
 	background-color:#E6E6E6;
 }
-.task-list .nav a{
+.mid-list .nav a{
 	color:#000;
 	padding:0 5px;
 
 }
 
-.task-list .task{
+.mid-list .task{
 	position:relative;
 	font-size:13px;
 }
-.task-list .task h3{
+.mid-list .task h3{
 	/* background-color:#D1AC59; */
 	padding-left: 10px;
 }
-.task-list .task  ul{
+.mid-list .task  ul{
 	padding-left:20px;
 }
 
