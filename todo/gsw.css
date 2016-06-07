@@ -94,27 +94,39 @@ a{
 
 }
 
-.mid-list .task{
+.mid-list div[class^='task']{
 	position:relative;
 	font-size:13px;
 }
-.mid-list .task h3{
-	/* background-color:#D1AC59; */
+.mid-list div[class^='task'] h3{
 	padding-left: 10px;
 }
-.mid-list .task  ul{
+.mid-list div[class^='task']  p{
 	padding-left:20px;
+	font-size:18px;
 }
 
 
-/* text内容区域 */
-.text{
+/* right-list内容区域 */
+.right-list{
 	float:left;
 	width:64.7%;
+		
+}
+
+div[class^='fwb'] p{
+	padding-left:20px;
+	height:30px;
+	font-size:18px;
 	background-color:#ccc;
 }
 
-
+div[class^='fwb'] h3{
+	padding-left:20px;
+}
+div[class^='fwb'] div{
+	height:300px;
+}
 
 
 
