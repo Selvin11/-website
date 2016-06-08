@@ -380,14 +380,14 @@ function insertAfter(newElement,target) {
 
 
 
-function $(name) {
-	if (name.indexOf('#') > -1) {
-		return document.getElementById(name);
-	}else if(name.indexOf('.') > -1){
-		var result = name.slice(1);
-		return document.getElementsByClassName(result);
-	}
-}; 
+// function $(name) {
+// 	if (name.indexOf('#') > -1) {
+// 		return document.getElementById(name);
+// 	}else if(name.indexOf('.') > -1){
+// 		var result = name.slice(1);
+// 		return document.getElementsByClassName(result);
+// 	}
+// }; 
 
 
 

@@ -2,21 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>todo</title>
 	<link rel="stylesheet" href="bootstrap.css">
 	<link rel="stylesheet" href="gsw.css">
 </head>
 <body>
 	<div class="wrap clearfix">
-		<div class="header">
-			<a href="#">Todo</a>
-		</div>
+		<!-- <nav class="navbar navbar-inverse"> -->
+			<div class="header">
+				<a href="#">Todo</a>
+			</div>
+		<!-- </nav> -->
+		
 		<div class="left-list">
 			<h2>task</h2>
 			<h2>分类列表</h2>
 			<dl class="categories"></dl>
 			<div class="add-list">
-				<a href="#" id="addList">新增分类</a>
+				<a href="#" id="addList"><i class="glyphicon glyphicon-plus"></i>新增分类</a>
 			</div>
 		</div><!-- left-list end -->
 		<div class="mid-list">
@@ -27,16 +30,16 @@
 			</div>
 			
 			<div class="add-list">
-				<a href="#">新增任务</a>
+				<a href="#"><i class="glyphicon glyphicon-plus"></i>新增任务</a>
 			</div>
 		</div><!-- mid-list end -->
 		<div class="right-list">
 			<!-- <div id="fwb" contenteditable></div> -->
 		</div>
-	</div>
+	</div><!-- wrap end -->
 	<script src="jquery.js"></script>
-	<script src="modules/todo.js"></script>
-	<script src="controller/gsw.js"></script>
+<!-- 	<script src="modules/todo.js"></script>
+	<script src="controller/gsw.js"></script> -->
 	<script src="task.js"></script>
 </body>
 </html>
