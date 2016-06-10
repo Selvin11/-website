@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="bootstrap-datetimepicker.min.css">
 	<link rel="stylesheet" href="gsw.css">
 </head>
 <body>
@@ -12,11 +13,10 @@
 			<a href="#">Todo</a>
 		</div>
 		<div class="left-list">
-			<h2>task</h2>
 			<h2>分类列表</h2>
 			<dl class="categories"></dl>
 			<div class="add-list">
-				<a href="#" id="addList">新增分类</a>
+				<a href="#" id="addList"><i class="glyphicon glyphicon-plus"></i>新增分类</a>
 			</div>
 		</div><!-- left-list end -->
 		<div class="mid-list">
@@ -27,7 +27,7 @@
 			</div>
 			
 			<div class="add-list">
-				<a href="#">新增任务</a>
+				<a href="#"><i class="glyphicon glyphicon-plus"></i>新增任务</a>
 			</div>
 		</div><!-- mid-list end -->
 		<div class="right-list">
@@ -35,8 +35,9 @@
 		</div>
 	</div>
 	<script src="jquery.js"></script>
+	<script src="bootstrap-datetimepicker.min.js"></script>
 	<script src="modules/todo.js"></script>
 	<script src="controller/gsw.js"></script>
-	<script src="task.js"></script>
+	<!-- <script src="task.js"></script> -->
 </body>
 </html>
