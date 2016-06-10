@@ -57,6 +57,31 @@ a{
 .left-list dl dd{
 	padding-left:30px;
 }
+.left-list dl i{
+	display:none;
+	transform-origin: 30% 50%;
+  -webkit-transform-origin: 30% 50%;
+  -moz-transform-origin:30% 50%;
+  transform: rotateZ(0deg);
+  -webkit-transform: rotateZ(0deg);
+  -moz-transform: rotateZ(0deg);
+	transition:transform 1s ;
+	-webkit-transition:transform 1s ;
+	-moz-transition:transform 1s ;
+}
+/* 删除过渡效果 */
+.left-list dl dt:hover i,
+.left-list dl dd:hover i{
+	display:block;
+	transform-origin: 30% 50%;
+  -webkit-transform-origin: 30% 50%;
+  -moz-transform-origin:30% 50%;
+  transform: rotateZ(45deg);
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+}
+
+
 .promt{
 	width:100%;
 	position:absolute;
@@ -80,14 +105,23 @@ a{
 .add-list a i{
 	padding-left:10px;
 	padding-right: 30px;
-	transition:transform 2s ease-in-out;
-	-webkit-transition:transform 2s ease-in-out;
-}
-.i-rotate{
 	transform-origin: 30% 50%;
-  transform: rotateZ(45deg);
   -webkit-transform-origin: 30% 50%;
-  -webkit-transform: rotateZ(45deg);
+  -moz-transform-origin:30% 50%;
+  transform: rotateZ(0deg);
+  -webkit-transform: rotateZ(0deg);
+  -moz-transform: rotateZ(0deg);
+	transition:transform 1s ;
+	-webkit-transition:transform 1s ;
+	-moz-transition:transform 1s ;
+}
+.add-list a:hover i{
+	transform-origin: 30% 50%;
+  -webkit-transform-origin: 30% 50%;
+  -moz-transform-origin:30% 50%;
+  transform: rotateZ(180deg);
+  -webkit-transform: rotateZ(180deg);
+  -moz-transform: rotateZ(180deg);
 }
 .del{
 	float:right;

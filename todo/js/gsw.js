@@ -1,4 +1,3 @@
-var todo = Todo.createNew();
 var dl = $('.categories')[0];
 var leftList = $('.left-list')[0];
 var midList = $('.mid-list')[0];
@@ -34,7 +33,8 @@ add1.onclick = function () {
 			var that = this;
 			// 使得dt 和 dd 建立联系，届时一起删除
 			mkfile('文件 : ', dl , that ,'文件 : ');//同时也新增了task div 	
- 			overShowDel(dl);
+
+
 			// mid-list区域内容====================================================
 			clickShowDiv(dl,'dd',midList,2);
 	
@@ -119,9 +119,9 @@ function addDt (result,parentNode,describe) {
 	// 创建目录dt
 	var dt = document.createElement('dt');
 	// 目录名
-	var span1 = document.createElement('span');
+	var span = document.createElement('span');
 	// 删除键
-	var span2 = document.createElement('span');
+	var i = document.createElement('i');
 	var ds = parentNode.children;
 	// 遍历子节点，看是否有重复标记
 	for (var k = 0; k < ds.length; k++) {
@@ -133,22 +133,20 @@ function addDt (result,parentNode,describe) {
 	parentNode.appendChild(dt);
 		// 标记，附上唯一classname
 		dt.className = result;
-		span1.innerHTML = describe;
-		dt.insertBefore(span1,dt.firstChild);
+		span.innerHTML = describe;
+		dt.insertBefore(span,dt.firstChild);
 		// 暂时性的删除设置
-		// span2.innerHTML = ' X ';
-		span2.className = 'del';
-		span2.style.display = 'none';
-		dt.appendChild(span2);	
+		i.className = 'glyphicon glyphicon-plus del';
+		dt.appendChild(i);	
 };
 // 创建dd
 function addDd (result,parentNode,target,describe) {
 	// 创建文件dd
 	var dd = document.createElement('dd');
 	// 目录名
-	var span1 = document.createElement('span');
+	var span = document.createElement('span');
 	// 删除键
-	var span2 = document.createElement('span');
+	var i = document.createElement('i');
 	var ds = parentNode.children;
 	for (var k = 0; k < ds.length; k++) {
 		if(ds[k].className === result){
@@ -160,13 +158,11 @@ function addDd (result,parentNode,target,describe) {
 
 		// 标记
 		dd.className = result;
-		span1.innerHTML = describe;
-		dd.insertBefore(span1,dd.firstChild);
+		span.innerHTML = describe;
+		dd.insertBefore(span,dd.firstChild);
 		// 暂时性的删除设置
-		// span2.innerHTML = ' X ';
-		span2.className = 'del';
-		span2.style.display = 'none';
-		dd.appendChild(span2);
+		i.className = 'glyphicon glyphicon-plus del';
+		dd.appendChild(i);
 	
 };
 // 移除目录或者文件
@@ -240,19 +236,6 @@ function removeDs (parentNode,result) {
 	}
 };
 
-function overShowDel(parentNode) {
-	for (var i = 0; i < parentNode.children.length; i++) {
-		parentNode.children[i].onmouseover = function () {
-
-			this.children[1].style.display = 'block';
-			this.children[1].className = 'glyphicon glyphicon-plus' + ' i-rotate';
-		}
-		parentNode.children[i].onmouseout = function () {
-			this.children[1].style.display = 'none';
-			this.children[1].className = 'glyphicon glyphicon-plus';
-		}
-	}
-}
 // 对midList && rightList 增加对应的div
 function addDiv (targetNode,result) {
 	var div = document.createElement('div');
