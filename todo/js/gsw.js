@@ -43,7 +43,6 @@ add1.onclick = function () {
 					// 获取对应的task-----------------------  div
 					// var getDiv(midList , 2) = getDiv(midList , 2);
 					// var getDiv(rightList , 0) = getDiv(rightList , 0);
-					
 					if(getDiv(midList , 2)){
 						// midList 增加描述内容
 						// mid 中部的时间标题
@@ -53,6 +52,7 @@ add1.onclick = function () {
 						
 						// rightLis 增加标题、日期、富文本编辑区,还有一个包裹div
 						// 增加右边的包裹div
+
 						var rightWrap = addDiv(getDiv(rightList , 0),result);
 						showDiv(getDiv(rightList , 0),result,0);
 						mktit(rightWrap,result);
@@ -60,20 +60,49 @@ add1.onclick = function () {
 						var date = addDate(rightWrap);
 						// 获取富文本编辑区
 						var fwd = mkfwd(rightWrap);
+
 						clickShowDiv(getDiv(midList , 2),'p',getDiv(rightList , 0),0);
 						curHeight(fwd,126);
 						window.onresize = function () {
 							curHeight(fwd,126);
+							curHeight(leftList,42);
+							curHeight(midList,42);
 						}
 						// 将右边时间赋值给中间的时间标题
-						var jq = jQuery.noConflict();
-						jq(".form_datetime")
-							.datetimepicker({format: 'yyyy-mm-dd hh:ii'})
-							.on('changeDate',function (e) {
-								var $that = jq(this);
-								console.log($that.val());
-								jq(midDate).html($that.val());
-							})
+						var dateInput = rightWrap.getElementsByTagName('input')[1];
+						dateInput.onchange = function () {
+							midDate.innerHTML = dateInput.value;
+						}
+						
+
+						// nav 计数
+						var num=0;
+						var allNum = $('#all'),
+								unDoneNum = $('#undone'),
+								doneNum = $('#done');
+						var rightDiv =getDiv(rightList , 0);
+						allNum.innerHTML = rightDiv.children.length;
+						for (var i = 0; i < rightDiv.children.length; i++) {
+							var checkInput = rightDiv.children[i].children[0].children[0];
+							unDoneNum.innerHTML = rightDiv.children.length;
+							doneNum.innerHTML = num;
+							checkInput.onchange = function () {
+								checkInput.disabled = true;
+								if (checkInput.checked) {
+									if (checkInput.checked) {
+										num++;
+										unDoneNum.innerHTML = rightDiv.children.length - num;
+										doneNum.innerHTML = num;
+									}
+								}else{
+										unDoneNum.innerHTML = rightDiv.children.length;
+										doneNum.innerHTML = num;
+									}
+							}
+						}
+
+
+
 					}			
 				}
 			// 阻止冒泡到目录层产生多余div
@@ -311,8 +340,16 @@ function mkMidDate(parentNode) {
 // 新增富文本选区---------标题
 function mktit(parentNode,result) {
 	var p = document.createElement('p');
+	var input = document.createElement('input');
+	var i = document.createElement('i');
+	i.className = "glyphicon glyphicon-ok";
+	input.type = 'checkbox';
+	input.style.opacity = 0;
+	input.style.filter = "alpha(opacity=0)";
 	p.innerHTML = result;
 	parentNode.appendChild(p);
+	p.appendChild(input);
+	p.appendChild(i);
 }
 // 新增富文本选区---------富文本
 function mkfwd(parentNode) {
@@ -328,22 +365,12 @@ function addDate(parentNode){
 	var label = document.createElement('label');
 	var input = document.createElement('input');
 	input.size = '16';
-	input.type = 'text';
-	input.className = 'form_datetime';
+	input.type = 'date';
 	label.innerHTML = '任务日期 : ';
 	parentNode.appendChild(label);
 	parentNode.appendChild(input);
 	return input;
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -361,10 +388,9 @@ function insertAfter(newElement,target) {
 
 function $(name) {
 	if (name.indexOf('#') > -1) {
-		return document.getElementById(name);
+		return document.getElementById(name.slice(1));
 	}else if(name.indexOf('.') > -1){
-		var result = name.slice(1);
-		return document.getElementsByClassName(result);
+		return document.getElementsByClassName(name.slice(1));
 	}
 } 
 

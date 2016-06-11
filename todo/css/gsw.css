@@ -132,7 +132,7 @@ a{
 .mid-list{
 	float:left;
 	position:relative;
-	width:15%;
+	width:20%;
 	border:1px solid #D1D1D1;
 	border-left:none;
 }
@@ -147,7 +147,10 @@ a{
 	padding:0 5px;
 
 }
+/* nav 计数 */
+.mid-list .nav .badge{
 
+}
 .mid-list div[class^='task']{
 	position:relative;
 	font-size:13px;
@@ -165,16 +168,32 @@ a{
 /* right-list内容区域 */
 .right-list{
 	float:left;
-	width:65%;	
+	width:60%;	
 }
 
 .right-list div p{
+	position:relative;
 	margin-bottom: 10px;
 	padding-left:20px;
 	height:40px;
 	line-height:40px;
 	font-size:18px;
 	background-color:#E6E6E6;
+}
+.right-list p i,
+.right-list p input
+{
+	position:absolute;
+	right:20px;
+	top:10px;
+}
+
+.right-list div p input{
+	z-index:1000;
+}
+
+.right-list p i{
+	z-index:1;
 }
 .right-list div label{
 	font-size: 16px;
