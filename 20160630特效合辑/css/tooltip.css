@@ -1,0 +1,50 @@
+body{
+	font-family:Microsoft Yahei , sans-serif , serif;
+}
+
+.wrap{
+	max-width:1000px;
+	margin:100px auto;
+}
+
+.tooltip{
+	position:relative;
+	width:20%;
+	display:inline-block;
+	color:#1A79DD;
+}
+.tooltip section{
+	display:inline-block;
+}
+.tooltext-top{
+	visibility:hidden;
+	position:absolute;
+	/* bottom:150%;
+	left:-4%; */
+	padding:5px 10px;
+	line-height:30px;
+	text-align:center;
+	border-radius:5px;
+	color:#fff;
+	background-color:#787B78;
+	/* opacity:0; */
+	transition:all .4s ease;
+}
+
+.tooltext-top::after{
+	content:"";
+	position:absolute;
+	left: 42%;
+	bottom: -45%;
+	border:10px solid;
+	border-color: #787B78 transparent transparent transparent;
+}
+
+section:hover .tooltext-top{
+	visibility:visible;
+	opacity:1;
+}
+
+
+
+
