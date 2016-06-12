@@ -1,8 +1,24 @@
 window.onload = function () {
 	waterfall('main','box');
+	//制造伪json数据，模拟后台
+	var dataInt = {
+		"data":[{"src":"0.jpg"},{"src":"1.jpg"},{"src":"2.jpg"},{"src":"3.jpg"}]
+	};
 	window.onscroll = function () {
 		if (checkScrollSlide) {
-			
+			var oParent = document.getElementById('main');
+			for (var i = 0; i < dataInt.data.length; i++) {
+				var oBox = document.createElement('div');
+				oBox.className = 'box';
+				oParent.appendChild(oBox);
+				var oPic = document.createElement('div');
+				oPic.className = 'pic';
+				oBox.appendChild(oPic);
+				var oImg = document.createElement('img');
+				oImg.src = "images/" + dataInt.data[i].src;
+				oPic.appendChild(oImg);
+			}
+		 waterfall('main','box');
 		}
 	}
 }
@@ -37,24 +53,6 @@ function waterfall(parent,box){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //封装getbyclassname function
 function getClass(parent,clsName) {
 	var boxArr = [],
@@ -66,7 +64,7 @@ function getClass(parent,clsName) {
 		}
 		return boxArr;
 }
-//获取最小高度图片的索引值
+//获取高度最小的图片的索引值
 function getMinhIndex(arr,val) {
 	for(var i in arr){
 		if (arr[i] == val) {
@@ -74,11 +72,12 @@ function getMinhIndex(arr,val) {
 		}
 	}
 }
-// 
+// 在鼠标滚动时检测是否达到加载数据的条件
 function checkScrollSlide() {
 	var oParent = document.getElementById('main');
 	var oBoxs = getClass(oParent,'box');
 	var lastBoxH = oBoxs[oBoxs.length-1].offsetTop + Math.floor(oBoxs[oBoxs.length-1].offsetHeight);
+	//混杂模式和标准模式获取滚动距离的差别
 	var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
 	var height = document.body.clientHeight || document.documentElement.clientHeight;
 	return(lastBoxH<scrollTop+height)?true:false;

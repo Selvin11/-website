@@ -1,0 +1,114 @@
+.container{
+	max-width: 1000px;
+	position:relative;
+	margin:auto;
+}
+/* fade 区域 ===============================*/
+.fade{
+	width: 100%;
+	position: relative;
+	-webkit-animation: fade 1.5s;
+	-o-animation: fade 1.5s;
+	-moz-animation: fade 1.5s;
+	-ms-animation: fade 1.5s;
+	animation: fade 1.5s;
+}
+.fade .numbertext{
+	position: absolute;
+	top:0;
+	padding:8px 10px;
+	font-size:18px;
+	color:white;
+}
+.fade img{
+	max-width: 1000px;
+}
+.fade .text{
+	position: absolute;
+	bottom: 0;
+	margin-bottom:8px;
+	width:100%;
+	color:white;
+	font-size:20px;
+	text-align:center;
+}
+/* fade animation */
+@-webkit-keframes fade {
+	from{opacity:.4;}
+	to{opacity:1;}
+}
+@-moz-keframes fade {
+	from{opacity:.4;}
+	to{opacity:1;}
+}
+@-ms-keframes fade {
+	from{filter:alpha(opacity=40);}
+	to{filter:alpha(opacity=100);}
+}
+@-o-keframes fade {
+	from{opacity:.4;}
+	to{opacity:1;}
+}
+@keframes fade {
+	from{opacity:.4;}
+	to{opacity:1;}
+}
+/* 箭头 ================================================*/
+.prev,
+.next{
+	position: absolute;
+	top:40%;
+	padding:16px;
+	color:white;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius:3px 0 0 3px;
+	transition:.5s ease-in-out;
+}
+.prev:hover ,.next:hover {
+	background-color:rgba(0, 0, 0, .8);
+}
+.next{
+	right:0;
+}
+
+/* dot 区域 */
+.toggle{
+	width:100%;
+	text-align:center;
+}
+.dot{
+	cursor:pointer;
+	display:inline-block;
+	width:15px;
+	height:15px;
+	margin:0 3px;
+	background-color:#bbb;
+	border-radius:50%;
+}
+.active , 
+.dot:hover{
+	background-color:#717171;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

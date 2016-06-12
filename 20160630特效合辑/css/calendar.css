@@ -1,0 +1,80 @@
+/* month====================== */
+body{
+	font-family: Verdana, sans-serif;
+}
+.wrap{
+	max-width:1000px;
+	margin:auto;
+}
+.month{
+	padding:75px 50px;
+	background-color:#2DCEED;
+}
+
+.month ul li{
+	color:white;
+	font-size:25px;
+	font-weight:bold;
+}
+.month ul li span{
+	font-size:18px;
+}
+.month ul{
+	text-align:center;
+}
+.month .prev{
+	float:left;
+}
+
+.month .next{
+	float:right;
+}
+
+/* weekdays===================== */
+.weekdays{
+	background-color:#fff;
+	padding:10px 0;
+}
+
+.weekdays li ,
+.days li{
+	display:inline-block;
+	width:13.6%;
+	text-align:center;
+}
+
+/* days======================== */
+.days{
+	background-color:#e8e8ea;
+}
+.days li{
+	/* text-align:center; */
+	padding:10px 0;
+}
+
+.days li .active{
+	padding:5px;
+	background-color:#2DCEED;
+	color:#fff;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
