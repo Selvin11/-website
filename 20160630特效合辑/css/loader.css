@@ -1,0 +1,22 @@
+body{
+	font-family:Microsoft Yahei,sans-serif,serif;
+}
+.wrap{
+	max-width:800px;
+	margin:100px auto;
+}
+
+.loader{
+	width:100px;
+	height:100px;
+	margin:auto;
+	border:15px solid;
+	border-color: #438CE0 #D2D8DB #D2D8DB #D2D8DB;
+	border-radius:50%;
+	animation:loader 1s linear infinite;
+}
+
+@keyframes loader{
+	from{transform:rotate3d(0, 0, 1, 0deg);}
+	to{transform:rotate3d(0, 0, 1, 360deg);}
+}

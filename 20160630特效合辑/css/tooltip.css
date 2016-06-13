@@ -9,40 +9,92 @@ body{
 
 .tooltip{
 	position:relative;
-	width:20%;
+	width:24%;
 	display:inline-block;
 	color:#1A79DD;
 }
 .tooltip section{
 	display:inline-block;
 }
-.tooltext-top{
+.tooltext-top,
+.tooltext-right,
+.tooltext-bottom,
+.tooltext-left{
 	visibility:hidden;
 	position:absolute;
-	/* bottom:150%;
-	left:-4%; */
 	padding:5px 10px;
 	line-height:30px;
 	text-align:center;
 	border-radius:5px;
 	color:#fff;
 	background-color:#787B78;
-	/* opacity:0; */
+	opacity:0;
+	filter:alpha(opacity=0);
 	transition:all .4s ease;
+	-webkit-transition:all .4s ease;
+	-moz-transition:all .4s ease;
+	-ms-transition:all .4s ease;
+	-o-transition:all .4s ease;
 }
-
-.tooltext-top::after{
+/* make tooltip trangle  */
+.tooltext-top::after,
+.tooltext-right::after,
+.tooltext-bottom::after,
+.tooltext-left::after{
 	content:"";
 	position:absolute;
+	border:10px solid;
+}
+/* .tooltext-top */
+.tooltext-top{
+	bottom:150%;
+	left:-18%;
+}
+.tooltext-top::after{
 	left: 42%;
 	bottom: -45%;
-	border:10px solid;
 	border-color: #787B78 transparent transparent transparent;
 }
+/* .tooltext-right */
+.tooltext-right{
+	bottom:-60%;
+	left:23%;
+}
+.tooltext-right::after{
+	left: -15%;
+	bottom: 20%;
+	border-color: transparent #787B78 transparent transparent;
+}
 
-section:hover .tooltext-top{
+/* .tooltext-bottom */
+.tooltext-bottom{
+	top: 150%;
+  left: -15%;
+}
+.tooltext-bottom::after{
+	left: 38%;
+	bottom: 98%;
+	border-color: transparent transparent #787B78 transparent;
+}
+
+/* .tooltext-left */
+.tooltext-left{
+	bottom: -50%;
+	left: -50%;
+}
+.tooltext-left::after{
+	right: -15%;
+	bottom: 20%;
+	border-color: transparent transparent transparent #787B78;
+}
+
+section:hover + .tooltext-top,
+section:hover + .tooltext-right,
+section:hover + .tooltext-bottom,
+section:hover + .tooltext-left{
 	visibility:visible;
 	opacity:1;
+	filter:alpha(opacity=100);
 }
 
 
