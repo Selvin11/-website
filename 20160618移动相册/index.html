@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<!-- <link rel="stylesheet" href="bootstrap.css"> -->
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="animate.css">
+  <style>
+    body{background-color:#000;}
+    li{float:left; width:100px;height:100px;overflow:hidden;}
+    .large{width:100%;height:100%;position:fixed;top:0;left:0;background-color:#000;display:none;}
+  </style>
+</head>
+<body>
+	<ul class="img-container" id="container">   
+  </ul>
+  <div class="large animated fadeIn" id="large_container">
+    <img id="large_img" src="" alt="">
+  </div>
+  <script src="zepto.min.js"></script>
+  <script>
+    var total = 17;
+    var zWin = $(window);
+    // 图片排列
+    var render = function () {
+      var winWidth = zWin.width();
+      var padding = 2;
+      var picWidth = Math.floor((winWidth - padding*3)/4);
+      var tmpl = '';
+      for (var i = 1; i <= total; i++) {
+        var p = padding;
+        var imgSrc = 'img/' + i + '.jpg';
+        if (i%4 == 1) {
+          p = 0;
+        }
+        tmpl += "<li data-id='" + i + "' class='animated bounceIn' style ='width:" + picWidth + "px;height:" +picWidth + "px;padding-left:" + p + "px;padding-top:" + padding + "px'><canvas id='cvs_" + i + "'></canvas></li>";
+        var imgObj = new Image();
+        imgObj.index = i;
+        imgObj.onload = function () {
+          var cvs = $("#cvs_" + this.index)[0].getContext('2d');
+          cvs.width = this.width;
+          cvs.height = this.height;
+          cvs.drawImage(this,0,0);
+        }
+
+        imgObj.src = imgSrc;
+      }
+
+      $("#container").html(tmpl);
+    }
+
+    render();
+
+    // 大图加载 
+    /**
+     * [wImg description]
+     * @type {[type]}
+     */
+    var wImg = $("#large_img");
+    var domImg = wImg[0];
+    var loadImg = function (id,callback) {
+      $("#large_container").css({
+        width:zWin.width(),
+        height:zWin.height()
+      }).show();
+      var imgsrc = "img/" + id + ".large.jpg";
+      var imgObj = new Image();
+      imgObj.onload = function () {
+        var w = this.width;
+        var h = this.height;
+        var winWidth = zWin.width();
+        var winHeight = zWin.height();
+        var realw = winHeight*w/h;
+        var paddingLeft = parseInt((winWidth - realw)/2);
+        var realh = winWidth*h/w;
+        var paddingTop = parseInt((winHeight - realh)/2);
+        // 根据宽高比，判断图片横图或竖图
+        wImg.css({
+          width: "auto",
+          height: "auto",
+          paddingLeft: 0,
+          paddingTop: 0
+        })
+        if(h/w > 1.2){
+          // 竖图
+          wImg.attr('src',imgsrc).css('height',winHeight).css('padding-left',paddingLeft);
+        }else{
+          // 横图
+           wImg.attr('src',imgsrc).css('width',winWidth).css('padding-top',paddingTop);
+        }
+        callback && callback();
+      }
+      imgObj.src = imgsrc;
+    };
+
+
+    $("#container").delegate('li','tap',function () {
+      var _id = cid = $(this).attr('data-id');
+      //点击小图加载大图
+      loadImg(_id);
+    })
+
+    // tap 关闭当前点击出现的大图
+    $("#large_container").tap(function () {
+      $(this).hide();
+    }).swipeLeft(function () {
+      cid++;
+      if (cid>total) {
+        cid=total;
+      }else{
+        loadImg(cid,function () {
+          domImg.addEventListener('webkitAnimationEnd',function () {
+            wImg.removeClass('animated bounceInRight');
+            domImg.removeEventListener('webkitAnimationEnd',function () {
+            });
+          },false);
+          wImg.addClass('animated bounceInRight');
+
+        });
+      }
+    }).swipeRight(function () {
+      cid--;
+      if (cid<1) {
+        cid=1;
+      }else{
+        loadImg(cid,function () {
+          domImg.addEventListener('webkitAnimationEnd',function () {
+            wImg.removeClass('animated bounceInLeft');
+            domImg.removeEventListener('webkitAnimationEnd',function () {
+            });
+          },false);
+          wImg.addClass('animated bounceInLeft');
+
+        });
+      }
+    })
+
+
+  </script>
+</body>
+</html>
