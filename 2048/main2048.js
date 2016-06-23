@@ -1,8 +1,4 @@
-/**
- * Created by liuyubobobo on 14-4-11.
- * my site: http://www.liuyubobobo.com
- */
-
+var btn = $("#newgamebutton");
 var board = new Array();
 var score = 0;
 var hasConflicted = new Array();
@@ -15,6 +11,9 @@ var endy = 0;
 $(document).ready(function(){
     prepareForMobile();
     newgame();
+    btn.on('click',function () {
+    newgame();
+})
 });
 
 function prepareForMobile(){
@@ -24,15 +23,18 @@ function prepareForMobile(){
         cellSpace = 20;
         cellSideLength = 100;
     }
+    $('#grid-container').css({
+        width:gridContainerWidth - 2*cellSpace,
+        height:gridContainerWidth - 2*cellSpace,
+        padding:cellSpace,
+        borderRadius:0.02*gridContainerWidth
+    });
 
-    $('#grid-container').css('width',gridContainerWidth - 2*cellSpace);
-    $('#grid-container').css('height',gridContainerWidth - 2*cellSpace);
-    $('#grid-container').css('padding', cellSpace);
-    $('#grid-container').css('border-radius',0.02*gridContainerWidth);
-
-    $('.grid-cell').css('width',cellSideLength);
-    $('.grid-cell').css('height',cellSideLength);
-    $('.grid-cell').css('border-radius',0.02*cellSideLength);
+    $('#grid-cell').css({
+        width:cellSideLength,
+        height:cellSideLength,
+        borderRadius:0.02*cellSideLength
+    });
 }
 
 function newgame(){
@@ -75,26 +77,32 @@ function updateBoardView(){
             var theNumberCell = $('#number-cell-'+i+'-'+j);
 
             if( board[i][j] == 0 ){
-                theNumberCell.css('width','0px');
-                theNumberCell.css('height','0px');
-                theNumberCell.css('top',getPosTop(i,j) + cellSideLength/2 );
-                theNumberCell.css('left',getPosLeft(i,j) + cellSideLength/2 );
+                theNumberCell.css({
+                    width: 0,
+                    height: 0,
+                    top: getPosTop(i,j) + cellSideLength/2,
+                    left:getPosLeft(i,j) + cellSideLength/2 
+                });
             }
             else{
-                theNumberCell.css('width',cellSideLength);
-                theNumberCell.css('height',cellSideLength);
-                theNumberCell.css('top',getPosTop(i,j));
-                theNumberCell.css('left',getPosLeft(i,j));
-                theNumberCell.css('background-color',getNumberBackgroundColor( board[i][j] ) );
-                theNumberCell.css('color',getNumberColor( board[i][j] ) );
+                theNumberCell.css({
+                    width:cellSideLength,
+                    height:cellSideLength,
+                    top:getPosTop(i,j),
+                    left:getPosLeft(i,j),
+                    backgroundColor:getNumberBackgroundColor( board[i][j] ),
+                    color:getNumberColor( board[i][j] )
+                } );
                 theNumberCell.text( board[i][j] );
             }
 
             hasConflicted[i][j] = false;
         }
 
-    $('.number-cell').css('line-height',cellSideLength+'px');
-    $('.number-cell').css('font-size',0.6*cellSideLength+'px');
+    $('.number-cell').css({
+        lineHeitght: cellSideLength,
+        fontSize: 0.6 * cellSideLength
+    });
 }
 
 function generateOneNumber(){
@@ -106,6 +114,7 @@ function generateOneNumber(){
     var randx = parseInt( Math.floor( Math.random()  * 4 ) );
     var randy = parseInt( Math.floor( Math.random()  * 4 ) );
 
+    //优化随机位置循环次数，减少浏览器内存消耗
     var times = 0;
     while( times < 50 ){
         if( board[randx][randy] == 0 )

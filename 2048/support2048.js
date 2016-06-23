@@ -1,13 +1,10 @@
-/**
- * Created by liuyubobobo on 14-4-11.
- * my site: http://www.liuyubobobo.com
- */
 
 documentWidth = window.screen.availWidth;
 gridContainerWidth = 0.92 * documentWidth;
 cellSideLength = 0.18 * documentWidth;
-cellSpace = 0.04*documentWidth;
+cellSpace = 0.04 * documentWidth;
 
+// 棋盘格子位置获取
 function getPosTop( i , j ){
     return cellSpace + i*( cellSpace + cellSideLength );
 }

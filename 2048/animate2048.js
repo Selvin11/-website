@@ -1,7 +1,4 @@
-/**
- * Created by liuyubobobo on 14-4-11.
- * my site: http://www.liuyubobobo.com
- */
+
 function showNumberWithAnimation( i , j , randNumber ){
 
     var numberCell = $('#number-cell-' + i + "-" + j );
@@ -28,5 +25,10 @@ function showMoveAnimation( fromx , fromy , tox, toy ){
 }
 
 function updateScore( score ){
-    $('#score').text( score );
+    $('#score').css("opacity",0);
+    $('#score').text( score )
+                .animate({
+                    opacity:1
+
+                },1000)
 }
